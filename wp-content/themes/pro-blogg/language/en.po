@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ProBlogg\n"
+"POT-Creation-Date: 2015-09-17 23:23+0800\n"
+"PO-Revision-Date: 2015-09-17 23:23+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:1
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:1
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:1
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:1
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:14
+msgid "Home"
+msgstr ""
+
+#: functions.php:137
+msgid "Post Settings"
+msgstr ""
+
+#: functions.php:152
+msgid "Show in Slider"
+msgstr ""
+
+#: functions.php:154
+msgid "Featured Type"
+msgstr ""
+
+#: functions.php:156
+msgid "Video ID"
+msgstr ""
+
+#: functions.php:199
+msgid "Logo"
+msgstr ""
+
+#: functions.php:201
+msgid "Allows you to edit your theme's layout."
+msgstr ""
+
+#: functions.php:211
+msgid "Logo Image"
+msgstr ""
+
+#: functions.php:218
+msgid "Slider"
+msgstr ""
+
+#: functions.php:220
+msgid "Allows you to set your slider"
+msgstr ""
+
+#: functions.php:231
+msgid "Show Slider"
+msgstr ""
+
+#: functions.php:238
+msgid "Social Media"
+msgstr ""
+
+#: functions.php:240
+msgid "Allows you to set your social media URLs"
+msgstr ""
+
+#: functions.php:265
+msgid "Footer"
+msgstr ""
+
+#: functions.php:267
+msgid "Allows you to set your footer settings"
+msgstr ""
+
+#: functions.php:278
+msgid "Copyright Text"
+msgstr ""
