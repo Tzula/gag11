@@ -116,6 +116,9 @@ Tags: black, gray, dark, white, one-column, two-columns, three-columns, right-si
 	min-height:750px;
 	text-align:left;
 }
+.home_left_content dt li{
+	list-style:none;
+}
 .home_left_hr{
 	width:186px;
 	height:8px;
@@ -173,19 +176,36 @@ Tags: black, gray, dark, white, one-column, two-columns, three-columns, right-si
 	margin: 0 0;
 	background:#FFFFFF;
 }
-.index_content ol {width:100%;}
-.index_content ol  li{width:100%; height:auto;}
-.index_content ol  li li{width:100%;padding:15px 15px; height:auto;}
-.index_content .home_hot{width:100%;height:440px;margin:0 0;border-top: 1px solid #e8e8e8;}
-.index_content .home_content_title{width:100%;height:25px;padding:10px 20px;text-align:left;}
-.index_content .home_cate{width:100%;height:220px;margin:0 0;border-top: 1px solid #e8e8e8;}
-.index_content .home_hot_posts{width:100%;height:375px;float:left;padding:10px 10px;}
-.index_content .home_hot_posts{width:100%;height:375px;float:left;}
+._content {margin:10px auto;}
+._content ol {width:100%;}
+._content ol  li{width:100%; height:auto;}
+._content ol  li li{width:100%;padding:15px 15px; height:auto;}
+._content .home_hot{width:100%;height:440px;margin:0 0;border-top: 1px solid #e8e8e8;}
+._content .home_content_title{width:100%;height:25px;padding:10px 20px;text-align:left;}
+._content .home_content_cate_more{width:98%;height:15px;padding:0px 20px;text-align:right;}
+._content .home_cate{width:100%;height:220px;margin:0 0;border-top: 1px solid #e8e8e8;}
+._content .home_hot_posts{width:100%;height:375px;float:left;padding:10px 10px;}
 .home_grid_post{width:197px;height:180px;margin:0 5px 12px;float:left;}
 .home_grid_post .grid_img img{width:197px;height:110px;overflow:hidden;}
 .grid_post_info{float:left;width:197px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
 .grid_post_title{float:left;width:157px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
 .grid_post_views{width:40px;height:60px;padding:30px 0 0;float:right;}
+
+.h_content {margin:10px auto;}
+.h_content ol {width:100%;}
+.h_content ol  li{width:100%; height:auto;}
+.h_content ol  li li{width:100%;padding:15px 15px; height:auto;}
+.h_content .home_hot{width:100%;height:440px;margin:0 0;border-top: 1px solid #e8e8e8;}
+.h_content .home_content_title{width:100%;height:25px;padding:10px 20px;text-align:left;}
+.h_content .home_content_cate_more{width:98%;height:15px;padding:0px 20px;text-align:right;}
+.h_content .home_cate{width:100%;height:190px;margin:0 0;border-top: 1px solid #e8e8e8;}
+.h_content .home_hot_posts{width:100%;height:375px;float:left;padding:10px 10px;}
+.home_grid_post{width:197px;height:180px;margin:0 5px 12px;float:left;}
+.home_grid_post .grid_img img{width:197px;height:110px;overflow:hidden;}
+.grid_post_info{float:left;width:197px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
+.grid_post_title{float:left;width:157px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
+.grid_post_views{width:40px;height:60px;padding:30px 0 0;float:right;}
+
 /*
 *此处设置首页内容图片左上角的类别
 */
@@ -488,8 +508,8 @@ a { text-decoration: none; }
   width: 400px;
   height: auto;
   background: #fff;
-  margin-top: 120px;
-  margin-left: 60%;
+  margin-top: 5px;
+  margin-left: 2%;
   float: left;
   text-align: left;
   border: solid 1px #ccc;
@@ -507,7 +527,7 @@ a { text-decoration: none; }
  }
  #show_links .blog-list{
 	float:left;
-	list-type:none;
+	list-style:none;
  }
  #show_links .blog-list .li-1 {
 	float:left;

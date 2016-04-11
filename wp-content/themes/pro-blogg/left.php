@@ -6,13 +6,13 @@
 				<dt>
 					<div class="home_left_hr"><hr style="color:#e8e8e8"></div>
 					<li>
-						<a href="http://www.gag11.com">
-						<img src="/wp-content/themes/pro-blogg/imagegs/home.png" width="186" height="28">
+						<a href="<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>">
+						<img src="/wp-content/themes/pro-blogg/images/home-logo.png" width="186" height="28">
 						</a>
 					</li>
 					<li>
 						<a href="http://www.gag11.com">
-							<img src="/wp-content/themes/pro-blogg/imagegs/now-pop.png" width="20" height="20">时下流行
+							<img src="/wp-content/themes/pro-blogg/images/now-pop.png" width="20" height="20">时下流行
 						</a>
 					</li>
 				</dt>

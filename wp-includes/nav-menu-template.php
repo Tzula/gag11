@@ -216,6 +216,57 @@ class Walker_Nav_Menu extends Walker {
 
 } // Walker_Nav_Menu
 
+/*
+*用于获取左侧菜单栏类别ID
+*/
+function wp_nav_menu_id( $args = array() ) {
+	static $menu_id_slugs = array();
+
+	$defaults = array( 'menu' => '', 'container' => 'div', 'container_class' => '', 'container_id' => '', 'menu_class' => 'menu', 'menu_id' => '',
+	'echo' => true, 'fallback_cb' => 'wp_page_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+	'depth' => 0, 'walker' => '', 'theme_location' => '' );
+
+	$args = wp_parse_args( $args, $defaults );
+	
+	$args = apply_filters( 'wp_nav_menu_args', $args );
+	$args = (object) $args;
+	$nav_menu = apply_filters( 'pre_wp_nav_menu', null, $args );
+	
+
+	if ( null !== $nav_menu ) {
+		if ( $args->echo ) {
+			echo $nav_menu;
+			return;
+		}
+
+		return $nav_menu;
+	}
+	$menu = wp_get_nav_menu_object( $args->menu );
+
+	if ( ! $menu && $args->theme_location && ( $locations = get_nav_menu_locations() ) && isset( $locations[ $args->theme_location ] ) )
+		$menu = wp_get_nav_menu_object( $locations[ $args->theme_location ] );
+	if ( ! $menu && !$args->theme_location ) {
+		$menus = wp_get_nav_menus();
+		foreach ( $menus as $menu_maybe ) {
+			if ( $menu_items = wp_get_nav_menu_items( $menu_maybe->term_id, array( 'update_post_term_cache' => false ) ) ) {
+				$menu = $menu_maybe;
+				break;
+			}
+		}
+	}
+
+	if ( empty( $args->menu ) ) {
+		$args->menu = $menu;
+	}
+	if ( $menu && ! is_wp_error($menu) && !isset($menu_items) )
+		$menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'update_post_term_cache' => false ) );
+		//var_dump($menu_items);exit;
+	return $menu_items;
+}
+
+
+
+
 /**
  * Displays a navigation menu.
  *
@@ -269,6 +320,8 @@ function wp_nav_menu( $args = array() ) {
 	$args = apply_filters( 'wp_nav_menu_args', $args );
 	$args = (object) $args;
 
+	
+
 	/**
 	 * Filter whether to short-circuit the wp_nav_menu() output.
 	 *
@@ -284,6 +337,7 @@ function wp_nav_menu( $args = array() ) {
 	 * @param object      $args   An object containing wp_nav_menu() arguments.
 	 */
 	$nav_menu = apply_filters( 'pre_wp_nav_menu', null, $args );
+	
 
 	if ( null !== $nav_menu ) {
 		if ( $args->echo ) {
@@ -296,6 +350,8 @@ function wp_nav_menu( $args = array() ) {
 
 	// Get the nav menu based on the requested menu
 	$menu = wp_get_nav_menu_object( $args->menu );
+
+	
 
 	// Get the nav menu based on the theme_location
 	if ( ! $menu && $args->theme_location && ( $locations = get_nav_menu_locations() ) && isset( $locations[ $args->theme_location ] ) )
@@ -319,7 +375,7 @@ function wp_nav_menu( $args = array() ) {
 	// If the menu exists, get its items.
 	if ( $menu && ! is_wp_error($menu) && !isset($menu_items) )
 		$menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'update_post_term_cache' => false ) );
-
+//var_dump($menu_items);exit;
 	/*
 	 * If no menu was found:
 	 *  - Fall back (if one was specified), or bail.

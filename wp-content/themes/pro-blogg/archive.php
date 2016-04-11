@@ -15,17 +15,24 @@ get_header();
 		<a href=""></a>
 	</div>
 	<div class="home_right_content">
-		<div class="index_content" style="margin:10px auto;">
+	<?php 
+		$args = array_merge( $wp_query->query, array( 'posts_per_page' => 30) );
+		$query = new WP_Query($args);
+		$type = get_post_meta($post->ID,'page_featured_type',true);
+		$categories = get_the_category($post->ID);
+		//echo $post->ID;var_dump($categories);exit;
+		//将object的对象转化成数组get_obhect_vars();
+		$categories = get_object_vars($categories[0]);
+		echo '<div class="archive_title"><h2>'.strtoupper($categories['name']).'</h2></div>';
+	?>
+							
+		<div class="_content" style="margin:10px auto;">
 	   <?php 
-				$args = array_merge( $wp_query->query, array( 'posts_per_page' => 30) );
-				$query = new WP_Query($args);
+				
 				if ($query->have_posts()) 
 				{
-					$type = get_post_meta($post->ID,'page_featured_type',true);
-					$categories = get_the_category($post->ID);
-					//将object的对象转化成数组get_obhect_vars();
-					$categories = get_object_vars($categories[0]);
-					echo '<div class="home_content_title">'.$categories['name'].'</div>';
+					
+
 					while($query->have_posts())
 						{
 							$query->the_post();

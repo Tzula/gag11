@@ -101,7 +101,7 @@
 				May be you like ~ ~ ~
 			</div>
 			<div class="include_homeContent" >				
-					<div class="single_include_one_title" style="font-family:'Roboto',sans-serif;font-size:25px;font-weight:900;"><img src="/wp-content/uploads/2016/03/moretrendingnews.png" width="850px" height:30px;></div>
+					<div class="single_include_one_title" style="font-family:'Roboto',sans-serif;font-size:25px;font-weight:900;"><img src="/wp-content/themes/pro-blogg/images/moretrendingnews.png" width="850px" height:30px;></div>
 					<div class="single_include_content" style="margin-left:auto;margin-right:auto;">
 						<div class="single_include_container">
 							<div class="single_include_post_content">
@@ -180,11 +180,11 @@
 					</script>
 			</div>
 			<div class="single_sidebar_one_title" >
-				<img src="/wp-content/uploads/2016/03/whathot.png" width="305px" height:30px;>
+				<img src="/wp-content/themes/pro-blogg/images/whathot.png" width="305px" height:30px;>
 			</div>
 			<ul class="asidepost-list">  
 				<?php if (function_exists('get_most_viewed')): ?>   
-				<?php single_get_timespan_most_viewed('post',10,7, true); ?>   
+				<?php single_get_timespan_most_viewed('post',20,7, true); ?>   
 				<?php endif; ?>  
 			</ul>
 		</div><!-- class="single_sidebar"部分结束-->
@@ -192,10 +192,7 @@
 	</div> <!-- clearfix部分结束-->
 </section>
 <!-- 页面主题部分结束-->
-
 <div class="single_footer">
-<?php
-get_footer();
-?>
+<?php get_footer()?>
 </div>
 

@@ -1,8 +1,14 @@
 <link rel="stylesheet" href="/wp-content/themes/pro-blogg/css/owl.carousel.css" type="text/css" />
 <script src="/wp-content/themes/pro-blogg/js/plugins/layer/layer.js"></script>
-<script type="text/javascript" src="./wp-content/themes/pro-blogg/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/wp-content/themes/pro-blogg/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="/wp-content/themes/pro-blogg/js/owl.carousel.js"></script>
 <script type="text/javascript">
+
+$(document).ready(function() 
+{ 
+	var rightWidth = $(window).width() - $('.home_left').width(); //
+	$('.home_right').width(rightWidth);
+});
 
 $(function(){
 	$('#owl-demo').owlCarousel({
@@ -18,12 +24,6 @@ $(function(){
 			})
 		}
 	});
-});
-
-$(document).ready(function() 
-{ 
-	var rightWidth = $(window).width() - $('.home_left').width(); //
-	$('.home_right').width(rightWidth);
 });
 
 </script>

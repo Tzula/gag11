@@ -310,7 +310,7 @@ function catch_that_image() {
 	ob_end_clean();
 	
 	$str = get_the_content();
-
+//var_dump($str);exit;
 $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $str, $matches);//用正则过滤文章
 
 	$first_img = $matches[1][0];

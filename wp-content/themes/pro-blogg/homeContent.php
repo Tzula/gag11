@@ -1,5 +1,25 @@
 <?php wp_homeContent(); ?>
-<div class="index_content" style="margin:10px auto;">
+<?php $cateIds = array();?>
+<script>
+var cate = [];
+$("#menu-tzula li").each(function(j, obj) 
+{ 
+	var url = $(this).children().attr('href');
+	url = url.substr(url.indexOf('?')+1).split("&");
+	var result = [];
+	for(var i=0; i<url.length; i++){
+		url[i] = url[i].split("=");
+		result[i] = url[i][1];
+	}
+	//cate[] = result;
+	
+});
+$("#cateIds").attr('value', cate);	
+</script>
+<?php //var_dump($cateIds); ?>
+
+
+<div class="h_content">
 
 		<!--此处引入轮播 -->
 		<?php 
@@ -101,53 +121,43 @@
 		</div>
 	</div>
 	<!--类别精选 5-->
-	<div class="home_cate">
 	
-	<?php 
+	
+	<?php
+		$catIds = array();
+		$catId = wp_nav_menu_id(array('theme_location' => 'header-menu'));
 		$args = array_merge( $wp_query->query, array( 'posts_per_page' => 5) );
 		$query = new WP_Query($args);
-		if ($query->have_posts()) 
-		{
-			$type = get_post_meta(15,'page_featured_type',true);
-			$categories = get_the_category($post->ID);
-			//将object的对象转化成数组get_obhect_vars();
-			$categories = get_object_vars($categories[0]);
-			echo '<div class="home_content_title">'.$categories['name'].'</div>';
-			while($query->have_posts())
-				{
-					$query->the_post();
-					
-					echo '<div class="home_grid_post">';
-					
+		foreach ($catId as $key => $list) {
+			$info = get_object_vars($list);
+			//var_dump($info);exit;
+			$catId = $info['object_id'];
+			echo '<div class="home_content_title">'.strtoupper($info['title']).'</div>';
+			echo '<div class="home_cate">';
+			$posts = $wpdb->get_results("select * from yy_posts where ID in (select object_id from yy_term_relationships where term_taxonomy_id = ".$catId.") and post_status = 'publish' ORDER BY post_date DESC limit 5");
+			//var_dump($posts);exit;
+			foreach ($posts as $key => $list){
+				$list = get_object_vars($list);
+				$postId = $list[ID];
+				//获取文章的浏览次数
+				$rows = $wpdb->get_results( "SELECT meta_value FROM yy_postmeta WHERE meta_key = 'views' AND post_id = ".$postId );
+				$views = get_object_vars($rows[0]);
+				echo '<div class="home_grid_post" >';	
+					echo '<div class="grid_img">
+							 <a href="'.get_permalink($list[ID]).'"><img src="'.catch_that_image().'" ></a>';
+					echo '</div>';
+					echo '<div class="grid_post_info">';
+						echo '<div class="grid_post_title" ><a href="'.get_permalink($list[ID]).'">'.mb_strimwidth($list['post_title'],0,60,'……').'</a></div>';
+						echo '<div class="grid_post_views" ><img src="/wp-content/themes/pro-blogg/images/hits.png" width="20px";height="20px"; style="float:left;">';
+						echo '<span class="grid_views">';  echo $views['meta_value'];
+						echo '</span></div>';
+					echo '</div>';
+				echo '</div>';
+			}
+			echo '</div>';
+			echo '<div class="home_content_cate_more"><a href="'.$info['url'].'"><img src="/wp-content/themes/pro-blogg/images/more.png"></a></div>';
+	   }
 
-					//获取文章的浏览次数
-					$rows = $wpdb->get_results( "SELECT meta_value FROM yy_postmeta WHERE meta_key = 'views' AND post_id = $post->ID" );
-					$views = get_object_vars($rows[0]);
-					switch ($type) {
-						case 'youtube':
-							echo '<iframe width="560" height="315" src="http://www.youtube.com/embed/'.get_post_meta( get_the_ID(), 'page_video_id', true ).'?wmode=transparent" frameborder="0" allowfullscreen></iframe>';
-							break;
-						case 'vimeo':
-							echo '<iframe src="http://player.vimeo.com/video/'.get_post_meta( get_the_ID(), 'page_video_id', true ).'?title=0&amp;byline=0&amp;portrait=0&amp;color=03b3fc" width="500" height="338" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
-							break;
-						default:
-						echo '<div class="grid_img">
-								 <a href="'.get_permalink().'"><img src="'.catch_that_image().'" ></a>';
-						echo '</div>';
-						echo '<div class="grid_post_info">';
-							echo '<div class="grid_post_title" ><a href="'.get_permalink().'">'.mb_strimwidth(get_the_title(),0,60,'……').'</a></div>';
-							echo '<div class="grid_post_views" ><img src="/wp-content/uploads/2016/03/hits.png" width="20px";height="20px"; style="float:left;">';
-							echo '<span class="grid_views">';  echo $views['meta_value'];
-							echo '</span></div>';
-						echo '</div>';
-						break;
-
-					}//switch结束
-					
-					echo '</div>';	//class="index_content_posts_grid_post“结束				
-				} //while 结束
-		}
-	?>
-		</div>
-	</div>
+   ?>
+		
 </div> 

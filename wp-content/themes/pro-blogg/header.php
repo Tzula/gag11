@@ -13,11 +13,11 @@
 		<div class="header_main_left">
 		
 				<a href="#" style="width:34px;height:30px;float:left;padding-left:0;" id="web_links">
-				<img src="./wp-content/themes/pro-blogg/imagegs/share-links.png" width="34px" height="30px">
+				<img src="/wp-content/themes/pro-blogg/images/share-links.png" width="34px" height="30px">
 				</a>				
 			
-			<a href="http://www.gag11.com" style="width:auto;height:30px;padding-left:0;float:left;">
-				<img src="./wp-content/themes/pro-blogg/imagegs/web.png" width="75px" height="30px">
+			<a href="<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>" style="width:auto;height:30px;padding-left:0;float:left;">
+				<img src="/wp-content/themes/pro-blogg/images/web.png" width="75px" height="30px">
 			</a>
 		</div>
 		<div class="header_main_center">
@@ -56,68 +56,68 @@
 						<br>
 						<li>
 							<a href="http://gossip44.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Entertainment
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Entertainment
 							</a>
 						</li>
 						<li>
 							<a href="http://sneaker11.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Sneaker
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Sneaker
 							</a>
 						</li>
 						<li>
 							<a href="http://gamewoz.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Game(Client)
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Game(Client)
 							</a>
 						</li>
 						<li>
 							<a href="http://wcgbee.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Game(WCG)
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Game(WCG)
 							</a>
 						</li>
 						<li>
 							<a href="http://0rzzzz.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;ACG
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;ACG
 							</a>
 						</li>
 						<li>
 							<a href="http://gag11.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Funny Series
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Funny Series
 							</a>
 						</li>
 					</ul>
 				</li>
 				<li class="li-2">
 					<ul class="li-2-ul">
-						<li class="title" style="color:#aaa;font-size:20px;">Related blogs</li>
+						
 						<br>
 						<li>
 							<a href="http://prank11.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Prank Compilation
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Prank Compilation
 							</a>
 						</li>
 						<li>
 							<a href="http://teaserme.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Sexy 
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Sexy 
 							</a>
 						</li>
 						<li>
 							<a href="http://popond.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Music
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Music
 							</a>
 						</li>
 						<li>
 							<a href="http://geeklots.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;GEEK
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;GEEK
 							</a>
 						</li>
 						<li>
 							<a href="http://techwoz.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;Techcrunch
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;Techcrunch
 							</a>
 						</li>
 						<li>
 							<a href="http://apphiton.com">
-							<img src="/wp-content/uploads/2016/03/links-icon.png" width="16" height="16">&nbsp;&nbsp;APP Review
+							<img src="/wp-content/themes/pro-blogg/images/links-icon.png" width="16" height="16">&nbsp;&nbsp;APP Review
 							</a>
 						</li>
 						
@@ -126,7 +126,7 @@
 			</ul>
 				
 			</div>
-	<script type="text/javascript" src="./wp-content/themes/pro-blogg/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/wp-content/themes/pro-blogg/js/jquery-1.8.3.min.js"></script>
 	<script>	
 		$("#web_links").click(function(){
 			if ($('#show_links').css('display') == 'none')
