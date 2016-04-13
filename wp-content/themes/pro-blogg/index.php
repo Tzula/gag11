@@ -10,6 +10,7 @@ $(document).ready(function()
 	$('.home_right').width(rightWidth);
 });
 
+
 $(function(){
 	$('#owl-demo').owlCarousel({
 		items: 1,

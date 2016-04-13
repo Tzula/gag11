@@ -161,7 +161,7 @@ Tags: black, gray, dark, white, one-column, two-columns, three-columns, right-si
 .home_right_content{
 	width:1056px;
 	min-height:750px;
-	margin:50px auto;
+	margin: 50px auto;
 	background:#FFFFFF;
 	border: 1px solid #e8e8e8;
 }
@@ -186,9 +186,9 @@ Tags: black, gray, dark, white, one-column, two-columns, three-columns, right-si
 ._content .home_cate{width:100%;height:220px;margin:0 0;border-top: 1px solid #e8e8e8;}
 ._content .home_hot_posts{width:100%;height:375px;float:left;padding:10px 10px;}
 .home_grid_post{width:197px;height:180px;margin:0 5px 12px;float:left;}
-.home_grid_post .grid_img img{width:197px;height:110px;overflow:hidden;}
-.grid_post_info{float:left;width:197px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
-.grid_post_title{float:left;width:157px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
+.home_grid_post .grid_img img{width:197px;height:120px;overflow:hidden;}
+.grid_post_info{float:left;width:197px;height:50px;margin:5px 0 0;text-align:left;font-size:14px;}
+.grid_post_title{float:left;width:157px;height:50px;margin:5px 0 0;text-align:left;font-size:14px;}
 .grid_post_views{width:40px;height:60px;padding:30px 0 0;float:right;}
 
 .h_content {margin:10px auto;}
@@ -201,10 +201,10 @@ Tags: black, gray, dark, white, one-column, two-columns, three-columns, right-si
 .h_content .home_cate{width:100%;height:190px;margin:0 0;border-top: 1px solid #e8e8e8;}
 .h_content .home_hot_posts{width:100%;height:375px;float:left;padding:10px 10px;}
 .home_grid_post{width:197px;height:180px;margin:0 5px 12px;float:left;}
-.home_grid_post .grid_img img{width:197px;height:110px;overflow:hidden;}
-.grid_post_info{float:left;width:197px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
-.grid_post_title{float:left;width:157px;height:60px;margin:5px 0 0;text-align:left;font-size:14px;}
-.grid_post_views{width:40px;height:60px;padding:30px 0 0;float:right;}
+.home_grid_post .grid_img img{width:197px;height:120px;overflow:hidden;}
+.grid_post_info{float:left;width:197px;height:50px;margin:5px 0 0;text-align:left;font-size:14px;}
+.grid_post_title{float:left;width:157px;height:50px;margin:5px 0 0;text-align:left;font-size:14px;}
+.grid_post_views{width:40px;height:50px;padding:30px 0 0;float:right;}
 
 /*
 *此处设置首页内容图片左上角的类别

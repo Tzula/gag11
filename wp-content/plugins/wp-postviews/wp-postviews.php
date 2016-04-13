@@ -322,7 +322,7 @@ function get_timespan_most_viewed($mode = '', $limit = 10, $days = 7, $display =
 		}
 		
 		foreach ($hots as $key => $hot) {
-			$thumb =  '<img src="'.$hot['img_Url'].'" alt="暂无特色图片" width="197px" height="110px";>';  
+			$thumb =  '<img src="'.$hot['img_Url'].'" alt="暂无特色图片" width="197px" height="120px";>';  
 			$temp .= '<li style="list-style-type:none;" class="asidepost-list-li"><div class="home_grid_post"><div class="grid_img"><a href="'.get_permalink($hot['post_id']).'" >'.$thumb.'</a></div><div class="grid_post_info"><a class="" href="'.get_permalink($hot['post_id']).'" style="">'.mb_strimwidth($hot['post_title'],0,80,'').'</a>'.__('', 'wp-postviews').'</div></div></li>';
 
 		}
@@ -339,10 +339,7 @@ function get_timespan_most_viewed($mode = '', $limit = 10, $days = 7, $display =
 ### Function: Get TimeSpan Most Viewed - Added by Paolo Tagliaferri (http://www.vortexmind.net - webmaster@vortexmind.net)
 function single_get_timespan_most_viewed($mode = '', $limit = 10, $days = 7, $display = true) {
 	global $wpdb, $post;	
-//	$limit_date = current_time('timestamp') - ($days*86400); 
-
-	$limit_date = '2016-03-16 18:34:24';
-
+	$limit_date = current_time('timestamp') - ($days*86400); 
 	$limit_date = date("Y-m-d H:i:s",$limit_date);	
 	$where = '';
 	$temp = '';

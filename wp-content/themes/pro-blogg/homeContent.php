@@ -57,14 +57,23 @@ $("#cateIds").attr('value', cate);
 				wp_reset_postdata();
 			endif;
 			//从此处开始循环输出轮播图片,每三张图片存入一个数组组成一个三维数组
+			$m = 0;
+			$i = 0;
 			foreach ($sliderImg as $key => $list) {
 				if ($key < 16) {
-					for ($i = 0; $i<4; $i++) {
-						if (!is_int(($key+1)/5)) {
+					switch ($key) {
+						case $key - $m < 4 :
 							$images[$i][] = $list;
-						}		
+							break;
+						case $key - $m >= 4 :
+							$i = $i + 1;
+							$m = $key;
+							if ($key - $m < 4) {
+								$images[$i][] = $list;
+							}
+							break;
 					}
-				}	
+				}
 			}
 			echo '<div id="owl-demo" class="owl-carousel">';
 			//循环输出轮播图
